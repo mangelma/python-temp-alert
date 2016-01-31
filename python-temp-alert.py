@@ -33,7 +33,7 @@ while True:
 	print temperature	
 
 	# value1 to send is temperature + timestamp
-	value1 = temperature + " " + localtime
+	value1 = str(temperature) + " " + localtime
 
 	# if temperature drops, send low temp alert
 	if temperature < 16:
