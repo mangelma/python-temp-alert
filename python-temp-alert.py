@@ -7,17 +7,13 @@ import time
 
 while True:
 
-	# timestamp
 	localtime = time.asctime( time.localtime(time.time()) )
 
-	# Open the file that we viewed earlier so that python can see what is in it. Replace the serial number as before. 
-	tfile = open("/sys/bus/w1/devices/10-000802824e58/w1_slave")
+	file = open("/sys/bus/w1/devices/28-000004cdad42/w1_slave")
 
-	# Read all of the text in the file. 
-	text = tfile.read() 
+	text = file.read() 
 
-	# Close the file now that the text has been read. 
-	tfile.close() 
+	file.close() 
 
 	# Split the text with new lines (\n) and select the second line. 
 	secondline = text.split("\n")[1] 
