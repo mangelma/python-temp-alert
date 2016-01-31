@@ -36,7 +36,7 @@ while True:
 	value1 = str(temperature) + " " + localtime
 
 	# if temperature drops, send low temp alert
-	if temperature < 16:
+	if temperature < 5:
 		requests.post('https://maker.ifttt.com/trigger/lowtempalert/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":value1})
 
 	# if temperature rises, send high temp alert
