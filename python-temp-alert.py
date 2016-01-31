@@ -1,6 +1,9 @@
 # apt-get install python-pip
 # pip install requests
 # based on https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/temperature/
+# sudo nano /boot/config.txt: dtoverlay=w1-gpio
+
+
 
 import requests
 import time
