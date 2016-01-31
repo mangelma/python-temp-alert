@@ -43,6 +43,6 @@ while True:
 	if temperature > 20:
 		requests.post('https://maker.ifttt.com/trigger/hitempalert/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":value1})
 
-	# wait
-	time.sleep(30)
+	# wait for ten minutes
+	time.sleep(600)
 
