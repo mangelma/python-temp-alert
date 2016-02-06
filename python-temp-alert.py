@@ -32,15 +32,21 @@ while True:
 
 	# if temperature drops, send low temp alert
 	if temperature < 5:
-		requests.post('https://maker.ifttt.com/trigger/lowtempalert/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":value1})
-		print "lowtempalert triggered"
+		try:
+			requests.post('https://maker.ifttt.com/trigger/lowtempalert/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":value1})
+		except:
+			pass
 	# if temperature rises, send high temp alert
 	if temperature > 20:
-		requests.post('https://maker.ifttt.com/trigger/hitempalert/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":value1})
-		print "hitempalert triggered"
+		try:
+			requests.post('https://maker.ifttt.com/trigger/hitempalert/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":value1})
+		except:
+			pass
 	# for logging
-	requests.post('https://maker.ifttt.com/trigger/templog/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":value1})
-	print "templog triggered"
+	try:
+		requests.post('https://maker.ifttt.com/trigger/templog/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":value1})
+	except:
+		pass
 	# wait for ten minutes
 	time.sleep(30)
 
