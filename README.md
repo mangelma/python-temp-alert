@@ -1,5 +1,8 @@
 #RasPi + DS18D20 + IFTTT-Maker
+Inspired by
 https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/temperature/
+https://ifttt.com/maker
+http://www.instructables.com/id/Raspberry-Pi-Launch-Python-script-on-startup/
 
 Make sure you got the requests library for Python:
 ```
