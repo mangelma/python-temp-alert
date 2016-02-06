@@ -23,6 +23,8 @@ while True:
 	# Put the decimal point in the right place and display it. 
 	temperature = temperature / 1000 
 
+	temperature = round(temperature, 1)
+
 	print temperature	
 
 	# value1 to send is temperature + timestamp
