@@ -22,3 +22,7 @@ git clone https://github.com/mangelma/python-temp-alert.git
 cd python-temp-alert/
 nano python-temp-alert.py
 ```
+Run the script
+```
+python python-temp-alert.py
+```
