@@ -5,7 +5,7 @@ while True:
 
 	localtime = time.asctime( time.localtime(time.time()) )
 
-	file = open("/sys/bus/w1/devices/28-000004cdad42/w1_slave")
+ 	file = open("/sys/bus/w1/devices/28-000004cdad42/w1_slave")
 
 	text = file.read() 
 
@@ -28,25 +28,24 @@ while True:
 	print temperature	
 
 	# value1 to send is temperature + timestamp
-	value1 = "temperature" + ":" + str(temperature) + "," + "time" + ":" + localtime
-
+	
 	# if temperature drops, send low temp alert
 	if temperature < 5:
 		try:
-			requests.post('https://maker.ifttt.com/trigger/lowtempalert/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":value1})
+			requests.post('https://maker.ifttt.com/trigger/lowtempalert/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":temperature, "value2":localtime})
 		except:
 			pass
 	# if temperature rises, send high temp alert
 	if temperature > 20:
 		try:
-			requests.post('https://maker.ifttt.com/trigger/hitempalert/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":value1})
+			requests.post('https://maker.ifttt.com/trigger/hitempalert/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":temperature, "value2":localtime})
 		except:
 			pass
 	# for logging
 	try:
-		requests.post('https://maker.ifttt.com/trigger/templog/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":value1})
+		requests.post('https://maker.ifttt.com/trigger/templog/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":temperature, "value2":localtime})
 	except:
 		pass
 	# wait for ten minutes
-	time.sleep(30)
+	time.sleep(1800)
 
