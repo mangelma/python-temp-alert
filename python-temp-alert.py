@@ -46,6 +46,6 @@ while True:
 		requests.post('https://maker.ifttt.com/trigger/templog/with/key/cykmAmqps7Wod3aGyLwNNr', data = {"value1":temperature, "value2":localtime})
 	except:
 		pass
-	# wait for ten minutes
+	# wait for 30 minutes
 	time.sleep(1800)
 
